@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: grpc-metrics-client
+
+grpc:
+  client:
+    grpc-metrics-server:
+      address: 'static://127.0.0.1:9899'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: ["prometheus", "metrics"]
+  stackdriver:
+    metrics:
+      export:
+        project-id: "project_id"
+        step: "15s"
+#  prometheus:
+#    metrics:
+#      export:
+#        pushgateway:
+#          enabled: true
+

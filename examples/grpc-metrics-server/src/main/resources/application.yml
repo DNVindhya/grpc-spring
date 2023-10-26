@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: grpc-metrics-server
+
+grpc:
+  server:
+    port: 9899
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: ["prometheus", "metrics"]
+  stackdriver:
+    metrics:
+      export:
+        project-id: "project_id"
+        step: "15s"
+#  prometheus:
+#    metrics:
+#      export:
+#        pushgateway:
+#          enabled: true

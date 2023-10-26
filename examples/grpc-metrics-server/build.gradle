@@ -1,0 +1,16 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation project(':grpc-server-spring-boot-starter')
+    implementation project(':examples:grpc-lib')
+
+    // For demonstration only
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    implementation 'io.prometheus:simpleclient_pushgateway:0.15.0'
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.11.5'
+    implementation 'io.micrometer:micrometer-registry-stackdriver:1.11.5'
+}
